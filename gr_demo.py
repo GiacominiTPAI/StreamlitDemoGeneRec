@@ -41,7 +41,7 @@ if dis != "Select your disease":
         col1.dataframe(df[col_title])
         col2.write("")
         col2.write("")
-        col2.button('Edit gene list or choose a different disease', on_click=gr_link)
+        #col2.button('Edit gene list or choose a different disease', on_click=gr_link)
         ask=st.button('Ask AI for suggestion')
         bar_placeholder = st.empty()
         if ask:
@@ -59,7 +59,7 @@ if dis != "Select your disease":
                         with c.expander(elem, expanded=False):
                                 col1, col2 = st.columns([1, 1])
                                 col1.write("banana  " + elem)
-                                col2.button('Inspect Gene Resources', key=elem, on_click=gr_link)
+                                #col2.button('Inspect Gene Resources', key=elem, on_click=gr_link)
 
 col1, col2 = st.columns([1, 1])
 col1.text('GeneRecommender Full Version Tutorial')
