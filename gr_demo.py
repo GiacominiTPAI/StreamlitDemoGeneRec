@@ -2,7 +2,7 @@ from operator import concat
 from turtle import onclick
 import streamlit as st
 import pandas as pd
-from streamlit_player import st_player
+#from streamlit_player import st_player
 import webbrowser
 import time
 
