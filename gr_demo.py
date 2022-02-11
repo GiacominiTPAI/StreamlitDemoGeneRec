@@ -47,6 +47,7 @@ if dis != "Select your disease":
         ask=st.button('Ask AI for suggestion')
         bar_placeholder = st.empty()
         if ask:
+                print("banana")
                 with bar_placeholder.container():
                         st.subheader("Artificial Intelligence processing...")
                         my_bar = st.progress(0)
