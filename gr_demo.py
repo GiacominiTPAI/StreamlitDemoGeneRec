@@ -3,12 +3,10 @@ from operator import concat
 import streamlit as st
 import pandas as pd
 #from streamlit_player import st_player
-import webbrowser
+from calls import gr_link
 import time
 
-def gr_link ():
-        print("go")
-        webbrowser.open_new_tab("https://www.generecommender.com/en/dashboard?screen=signup")
+
 
 data={ 'cancer':
                 {
