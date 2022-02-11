@@ -1,4 +1,4 @@
 pandas
 streamlit
 #webbrowser
-bokeh
+bokeh==2.4.1
