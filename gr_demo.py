@@ -1,14 +1,14 @@
 from operator import concat
-#from turtle import onclick
 import streamlit as st
 import pandas as pd
-#from streamlit_player import st_player
 import time
-import webbrowser
+from bokeh.models.widgets import Div
 
 def gr_link ():
-        print("go")
-        webbrowser.open_new_tab("https://www.generecommender.com/en/dashboard?screen=signup")
+        js = "window.open('https://www.generecommender.com/en/dashboard?screen=signup')"  # New tab or window
+        html = '<img src onerror="{}">'.format(js)
+        div = Div(text=html)
+        st.bokeh_chart(div)
 
 
 data={ 'cancer':
@@ -47,7 +47,6 @@ if dis != "Select your disease":
         ask=st.button('Ask AI for suggestion')
         bar_placeholder = st.empty()
         if ask:
-                print("banana")
                 with bar_placeholder.container():
                         st.subheader("Artificial Intelligence processing...")
                         my_bar = st.progress(0)
