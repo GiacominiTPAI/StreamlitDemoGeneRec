@@ -2,6 +2,7 @@ from operator import concat
 import streamlit as st
 import pandas as pd
 import time
+import json
 from bokeh.models.widgets import Div
 
 def gr_link ():
@@ -10,26 +11,14 @@ def gr_link ():
         div = Div(text=html)
         st.bokeh_chart(div)
 
-
-data={ 'cancer':
-                {
-                'input': {'il6','tnf','appo'},
-                'output':  {'pollo1','pollo2','pollo3'}
-                                                },
-        'diabetes':{
-                'input': {'yosd','dcs','dcs','cane','gatto'},
-                'output':  {'coniglio','dd','adw'}
-                                                },
-        'alzheimer':{
-                'input': {'dccds','kkcs','soi','mvsd'},
-                'output':  {'i','d','a'}
-                                                }}
+with open('data.json', 'r') as f:
+  data = json.load(f)
 
 
 st.title('GeneRecommender - Demo')
 
 
-dis=st.selectbox('Chose the disease you are studying', ['Select your disease','cancer', 'diabetes','problemi'])
+dis=st.selectbox('Chose the disease you are studying', ['Select your disease',"Alzheimer's Disease, C0002395", 'Diabetes Mellitus, Non-Insulin-Dependent, C0011860','Obesity, C0028754'])
 if dis != "Select your disease":
 
         df=pd.DataFrame(data[dis]['input'])
@@ -38,7 +27,7 @@ if dis != "Select your disease":
         col_title=concat(dis, " Input Genes")
         df.columns=[col_title]
 
-        col1, col2 = st.columns([1, 1])
+        col1, col2 = st.columns([2, 1])
 
         col1.dataframe(df[col_title])
         col2.write("")
@@ -58,9 +47,9 @@ if dis != "Select your disease":
                 st.subheader('Artificial Intelligence Reccomendations')
                 c = st.container()
                 for elem in data[dis]['output']:
-                        with c.expander(elem, expanded=False):
+                        with c.expander(elem[0], expanded=False):
                                 col1, col2 = st.columns([1, 1])
-                                col1.write("banana  " + elem)
+                                col1.write(elem[1])
                                 col2.button('Inspect Gene Resources', key=elem, on_click=gr_link)
 
 col1, col2 = st.columns([1, 1])
