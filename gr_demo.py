@@ -20,7 +20,10 @@ def open_modal():
         with modal.container():
                 st.subheader('Exploit the full potential of Artificial Intelligence')
                 st.markdown("GeneRecommender is built on an extremely advanced neural network able to scan millions of papers. Registering with your academic email you will access the full functionalities of the system and you will be able to use an advanced Machine Learning system as support for your research.")
-                
+                st.markdown("""Registering you will be able to:
+- Edit the input, inserting any disease or genes involved in your study
+- Get up to 30 recommended genes per query
+- Explore the output through a vast number of online resources""")
                 col1, col2 = st.columns([1, 1])
                 col1.text('GeneRecommender Full Version Tutorial')
                 col1.video("https://youtu.be/KLPNX5XXMQQ")
@@ -40,10 +43,7 @@ st.title('GeneRecommender - Demo')
 
 st.markdown("""This is a demo of the GeneRecommender platform with limited functionalities. This advanced Artificial Intelligent system is able to suggest which genes might be involved in your research. The required inputs are some diseases and other genes you already know to be involved.""")
 st.button('Register at www.GeneRecommender.com',key="main", on_click=gr_link)
-st.markdown("""Registering you will be able to:
-- Edit the input, inserting any disease or genes involved in your study
-- Get up to 30 recommended genes per query
-- Explore the output through a vast number of online resources""")
+
 
 dis=st.selectbox('Chose the disease you are studying', ['Select disease',"Alzheimer's Disease, C0002395", 'Diabetes Mellitus, Non-Insulin-Dependent, C0011860','Obesity, C0028754'])
 if dis != "Select disease":
@@ -68,7 +68,7 @@ if dis != "Select disease":
                         my_bar = st.progress(0)
                         for percent_complete in range(50):
                                 time.sleep(0.1)
-                                my_bar.progress(percent_complete + 1)
+                                my_bar.progress(percent_complete*2 + 1)
                 bar_placeholder.empty()        
 
                 st.subheader('Artificial Intelligence Reccomendations')
