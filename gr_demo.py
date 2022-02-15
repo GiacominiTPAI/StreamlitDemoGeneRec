@@ -39,8 +39,9 @@ with open('data.json', 'r') as f:
   data = json.load(f)
 
 
-st.title('GeneRecommender - Demo')
 
+
+st.title('GeneRecommender - Demo')
 st.markdown("""This is a demo of the GeneRecommender platform with limited functionalities. This advanced Artificial Intelligence system is able to suggest which genes might be involved in your research. The required inputs are:
 - One or more diseases
 - Genesymbols of proteins you already know to be related""")
@@ -82,7 +83,21 @@ if dis != "Select disease":
                                 col2.button('Inspect Gene Resources', key=elem, on_click=open_modal)
                 c.button('Get more genes', key=elem, on_click=open_modal)
 
-
+components.html("""
+<head>
+<!-- Hotjar Tracking Code for https://share.streamlit.io/giacominitpai/streamlitdemogenerec/main/gr_demo.py -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2832620,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+</head>
+""")
 
 
 
