@@ -19,18 +19,18 @@ def gr_link ():
 def open_modal():
         with modal.container():
                 st.subheader('Exploit the full potential of Artificial Intelligence')
-                st.markdown("GeneRecommender is built on an extremely advanced neural network able to scan millions of papers. Registering with your academic email you will access the full functionalities of the system and you will be able to use an advanced Machine Learning system as support for your research.")
+                st.markdown("GeneRecommender is built on an extremely advanced neural network able to scan millions of papers. Registering with your academic email you will access the full functionalities of the system and you will be able to use advanced Machine Learning as a support for your research.")
                 st.markdown("""Registering you will be able to:
-- Edit the input, inserting any disease or genes involved in your study
+- Edit the input, inserting any disease or gene involved in your study
 - Get up to 30 recommended genes per query
 - Explore the output through a vast number of online resources""")
                 col1, col2 = st.columns([1, 1])
-                col1.text('GeneRecommender Full Version Tutorial')
+                col1.text('Full Version Tutorial')
                 col1.video("https://youtu.be/KLPNX5XXMQQ")
-                col2.text('GeneRecommender for Life Science Researchers')
+                col2.text('AI for Life Science Researchers')
                 col2.video("https://www.youtube.com/G8QKXORcets")
                 
-                st.button('Register at www.GeneRecommender.com',key="modal", on_click=gr_link)
+                st.button('Sign up to www.GeneRecommender.com',key="modal", on_click=gr_link)
 
 
 
@@ -41,11 +41,13 @@ with open('data.json', 'r') as f:
 
 st.title('GeneRecommender - Demo')
 
-st.markdown("""This is a demo of the GeneRecommender platform with limited functionalities. This advanced Artificial Intelligent system is able to suggest which genes might be involved in your research. The required inputs are some diseases and other genes you already know to be involved.""")
-st.button('Register at www.GeneRecommender.com',key="main", on_click=gr_link)
+st.markdown("""This is a demo of the GeneRecommender platform with limited functionalities. This advanced Artificial Intelligence system is able to suggest which genes might be involved in your research. The required inputs are:
+- One or more diseases
+- Genesymbols of proteins you already know to be related""")
+st.button('Sign up to www.GeneRecommender.com',key="main", on_click=gr_link)
 
 
-dis=st.selectbox('Chose the disease you are studying', ['Select disease',"Alzheimer's Disease, C0002395", 'Diabetes Mellitus, Non-Insulin-Dependent, C0011860','Obesity, C0028754'])
+dis=st.selectbox('Chose a disease', ['Select disease',"Alzheimer's Disease, C0002395", 'Diabetes Mellitus, Non-Insulin-Dependent, C0011860','Obesity, C0028754'])
 if dis != "Select disease":
 
         df=pd.DataFrame(data[dis]['input'])
