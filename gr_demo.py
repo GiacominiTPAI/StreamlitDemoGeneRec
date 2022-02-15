@@ -27,7 +27,7 @@ def open_modal():
                 col2.text('GeneRecommender for Life Science Researchers')
                 col2.video("https://www.youtube.com/G8QKXORcets")
                 
-                st.button('Register at www.GeneRecommender.com', on_click=gr_link)
+                st.button('Register at www.GeneRecommender.com',key="modal", on_click=gr_link)
 
 
 
@@ -39,7 +39,7 @@ with open('data.json', 'r') as f:
 st.title('GeneRecommender - Demo')
 
 st.markdown("""This is a demo of the GeneRecommender platform with limited functionalities. This advanced Artificial Intelligent system is able to suggest which genes might be involved in your research. The required inputs are some diseases and other genes you already know to be involved.""")
-st.button('Register at www.GeneRecommender.com', on_click=gr_link)
+st.button('Register at www.GeneRecommender.com',key="main", on_click=gr_link)
 st.markdown("""Registering you will be able to:
 - Edit the input, inserting any disease or genes involved in your study
 - Get up to 30 recommended genes per query
