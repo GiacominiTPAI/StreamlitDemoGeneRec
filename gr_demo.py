@@ -38,9 +38,9 @@ with open('data.json', 'r') as f:
 
 st.title('GeneRecommender - Demo')
 
-st.markdown("""This is a demo of the GeneRecommender platform with limited functionalities. This advanced Artificial Intelligent system is able to suggest which genes might be involved in your research. The required inputs are some diseases and other genes you already know to be involved.
-
-Registering you will be able to:
+st.markdown("""This is a demo of the GeneRecommender platform with limited functionalities. This advanced Artificial Intelligent system is able to suggest which genes might be involved in your research. The required inputs are some diseases and other genes you already know to be involved.""")
+st.button('Register at www.GeneRecommender.com', on_click=gr_link)
+st.markdown("""Registering you will be able to:
 - Edit the input, inserting any disease or genes involved in your study
 - Get up to 30 recommended genes per query
 - Explore the output through a vast number of online resources""")
@@ -66,7 +66,7 @@ if dis != "Select disease":
                 with bar_placeholder.container():
                         st.subheader("Artificial Intelligence processing...")
                         my_bar = st.progress(0)
-                        for percent_complete in range(100):
+                        for percent_complete in range(50):
                                 time.sleep(0.1)
                                 my_bar.progress(percent_complete + 1)
                 bar_placeholder.empty()        
