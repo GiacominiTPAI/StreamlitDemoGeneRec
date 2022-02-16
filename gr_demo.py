@@ -19,7 +19,7 @@ def gr_link ():
 def open_modal():
         with modal.container():
                 st.subheader('Exploit the full potential of Artificial Intelligence')
-                st.markdown("GeneRecommender is built on an extremely advanced neural network able to scan millions of papers. Registering with your academic email you will access the full functionalities of the system and you will be able to use advanced Machine Learning as a support for your research.")
+                st.markdown("Registering with your academic email you will access the full functionalities of the system and you will be able to use advanced Machine Learning as a support for your research.")
                 st.markdown("""Registering you will be able to:
 - Edit the input, inserting any disease or gene involved in your study
 - Get up to 30 recommended genes per query
@@ -83,21 +83,7 @@ if dis != "Select disease":
                                 col2.button('Inspect Gene Resources', key=elem, on_click=open_modal)
                 c.button('Get more genes', key=elem, on_click=open_modal)
 
-components.html("""
-<head>
-<!-- Hotjar Tracking Code for https://share.streamlit.io/giacominitpai/streamlitdemogenerec/main/gr_demo.py -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2832620,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-</head>
-""")
+
 
 
 
